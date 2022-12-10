@@ -1,0 +1,36 @@
+name: oai-5g-smf
+
+summary: OpenAirInterface 5G Core Network smf
+
+description: |
+  OPENAIR-CN-5G is an implementation of the 3GPP specifications for the 5G Core Network. This 
+  charms deploys the smf component of the 5G Core Network.
+
+containers:
+  smf:
+    resource: smf-image
+    mounts:
+      - storage: config
+        location: /openair-smf/etc
+
+storage:
+  config:
+    type: filesystem
+    description: smf Config directory
+    minimum-size: 1G
+
+resources:
+  smf-image:
+    type: oci-image
+    description: OCI image for smf
+    upstream-source: docker.io/oaisoftwarealliance/oai-smf:v1.4.0
+
+requires:
+  fiveg-amf:
+    interface: fiveg-amf
+  fiveg-upf:
+    interface: fiveg-upf
+  fiveg-nrf:
+    interface: fiveg-nrf
+  fiveg-udm:
+    interface: fiveg-udm
