@@ -54,7 +54,7 @@ SMF =
        # DNN IP ADDRESS RANGE format is for example: "12.2.1.2 - 12.2.1.128"
       {DNN_NI = "{{ dnn_0_ni }}"; PDU_SESSION_TYPE = "{{ dnn_0_pdu_session_type }}"; IPV4_RANGE = "{{ dnn_0_ipv4_range }}"; IPV6_PREFIX = "{{ dnn_0_ipv6_prefix }}"},
       {DNN_NI = "{{ dnn_1_ni }}"; PDU_SESSION_TYPE = "{{ dnn_1_pdu_session_type }}"; IPV4_RANGE = "{{ dnn_1_ipv4_range }}"; IPV6_PREFIX = "{{ dnn_1_ipv6_prefix }}"},
-      {DNN_NI = "{{ dnn_2_ni }}"; PDU_SESSION_TYPE = "{{ dnn_2_pdu_session_type }}"; IPV4_RANGE = "{{ dnn_2_ipv4_range }}"; IPV6_PREFIX = "{{ dnn_2_ipv6_prefix }}"},
+      {DNN_NI = "{{ dnn_2_ni }}"; PDU_SESSION_TYPE = "{{ dnn_2_pdu_session_type }}"; IPV4_RANGE = "{{ dnn_2_ipv4_range }}"; IPV6_PREFIX = "{{ dnn_2_ipv6_prefix }}"}
     );
 
     # DNS address communicated to UEs
@@ -116,13 +116,13 @@ SMF =
     LOCAL_CONFIGURATION :
     {
       SESSION_MANAGEMENT_SUBSCRIPTION_LIST = (
-         { NSSAI_SST = {{ session_management_0_nssai_sst }}, NSSAI_SD = "{{ nssai_0_sd }}", DNN = "{{ session_management_0_dnn }}", DEFAULT_SESSION_TYPE = "{{ session_management_0_default_session_type }}", DEFAULT_SSC_MODE = 1,
+         { NSSAI_SST = {{ dnn_0_nssai_sst }}, NSSAI_SD = "{{ dnn_0_nssai_sd }}", DNN = "{{ dnn_0_ni }}", DEFAULT_SESSION_TYPE = "{{ dnn_0_pdu_session_type }}", DEFAULT_SSC_MODE = 1,
            QOS_PROFILE_5QI = 6, QOS_PROFILE_PRIORITY_LEVEL = 1, QOS_PROFILE_ARP_PRIORITY_LEVEL = 1, QOS_PROFILE_ARP_PREEMPTCAP = "NOT_PREEMPT",
            QOS_PROFILE_ARP_PREEMPTVULN = "NOT_PREEMPTABLE", SESSION_AMBR_UL = "20Mbps", SESSION_AMBR_DL = "22Mbps"},
-         { NSSAI_SST = {{ session_management_1_nssai_sst }}; NSSAI_SD = "{{ nssai_1_sd }}", DNN = "{{ session_management_1_dnn }}", DEFAULT_SESSION_TYPE = "{{ session_management_1_default_session_type }}", DEFAULT_SSC_MODE = 1,
+         { NSSAI_SST = {{ dnn_1_nssai_sst }}; NSSAI_SD = "{{ dnn_1_nssai_sd }}", DNN = "{{ dnn_1_ni }}", DEFAULT_SESSION_TYPE = "{{ dnn_1_pdu_session_type }}", DEFAULT_SSC_MODE = 1,
            QOS_PROFILE_5QI = 7, QOS_PROFILE_PRIORITY_LEVEL = 1, QOS_PROFILE_ARP_PRIORITY_LEVEL = 1, QOS_PROFILE_ARP_PREEMPTCAP = "NOT_PREEMPT",
            QOS_PROFILE_ARP_PREEMPTVULN = "NOT_PREEMPTABLE", SESSION_AMBR_UL = "20Mbps", SESSION_AMBR_DL = "22Mbps"},
-         { NSSAI_SST = {{ session_management_2_nssai_sst }}; NSSAI_SD = "{{ nssai_2_sd }}", DNN = "{{ session_management_2_dnn }}", DEFAULT_SESSION_TYPE = "{{ session_management_2_default_session_type }}", DEFAULT_SSC_MODE = 1,
+         { NSSAI_SST = {{ dnn_2_nssai_sst }}; NSSAI_SD = "{{ dnn_2_nssai_sd }}", DNN = "{{ dnn_2_ni }}", DEFAULT_SESSION_TYPE = "{{ dnn_2_pdu_session_type }}", DEFAULT_SSC_MODE = 1,
            QOS_PROFILE_5QI = 8, QOS_PROFILE_PRIORITY_LEVEL = 1, QOS_PROFILE_ARP_PRIORITY_LEVEL = 1, QOS_PROFILE_ARP_PREEMPTCAP = "NOT_PREEMPT",
            QOS_PROFILE_ARP_PREEMPTVULN = "NOT_PREEMPTABLE", SESSION_AMBR_UL = "20Mbps", SESSION_AMBR_DL = "22Mbps"}
         );

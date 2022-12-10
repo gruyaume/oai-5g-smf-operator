@@ -173,7 +173,7 @@ class TestCharm(unittest.TestCase):
             '       # DNN IP ADDRESS RANGE format is for example: "12.2.1.2 - 12.2.1.128"\n'
             '      {DNN_NI = "oai.ipv4"; PDU_SESSION_TYPE = "IPv4"; IPV4_RANGE = "12.1.1.2 - 12.1.1.40"; IPV6_PREFIX = "2001:1:2::/64"},\n'  # noqa: E501, W505
             '      {DNN_NI = "default"; PDU_SESSION_TYPE = "IPv4"; IPV4_RANGE = "12.1.1.41 - 12.1.1.80"; IPV6_PREFIX = "3001:1:2::/64"},\n'  # noqa: E501, W505
-            '      {DNN_NI = "oai"; PDU_SESSION_TYPE = "IPv4"; IPV4_RANGE = "12.1.1.81 - 12.1.1.120"; IPV6_PREFIX = "4001:1:2::/64"},\n'  # noqa: E501, W505
+            '      {DNN_NI = "oai"; PDU_SESSION_TYPE = "IPv4"; IPV4_RANGE = "12.1.1.81 - 12.1.1.120"; IPV6_PREFIX = "4001:1:2::/64"}\n'  # noqa: E501, W505
             "    );\n\n"
             "    # DNS address communicated to UEs\n"
             '    DEFAULT_DNS_IPV4_ADDRESS     = "172.21.3.100";      # YOUR DNS CONFIG HERE\n'  # noqa: E501, W505
@@ -215,18 +215,18 @@ class TestCharm(unittest.TestCase):
             f'      FQDN         = "{nrf_fqdn}"           # YOUR NRF FQDN CONFIG HERE\n'
             "    };\n\n"
             "    UPF_LIST = (\n"
-            f'         {{IPV4_ADDRESS = "{upf_ipv4_address}" ; FQDN = "{upf_fqdn}"; NWI_LIST = ({{DOMAIN_ACCESS  = "", DOMAIN_CORE = ""}})}}   # YOUR UPF CONFIG HERE\n'  # noqa: E501, W505
+            f'         {{IPV4_ADDRESS = "{upf_ipv4_address}" ; FQDN = "{upf_fqdn}"; NWI_LIST = ({{DOMAIN_ACCESS  = "random", DOMAIN_CORE = "random"}})}}   # YOUR UPF CONFIG HERE\n'  # noqa: E501, W505
             "    );                                                               # NWI_LIST IS OPTIONAL PARAMETER\n\n"  # noqa: E501, W505
             "    LOCAL_CONFIGURATION :\n"
             "    {\n"
             "      SESSION_MANAGEMENT_SUBSCRIPTION_LIST = (\n"
-            '         { NSSAI_SST = 1, NSSAI_SD = "", DNN = "oai.ipv4", DEFAULT_SESSION_TYPE = "IPv4", DEFAULT_SSC_MODE = 1,\n'  # noqa: E501, W505
+            '         { NSSAI_SST = 1, NSSAI_SD = "1", DNN = "oai.ipv4", DEFAULT_SESSION_TYPE = "IPv4", DEFAULT_SSC_MODE = 1,\n'  # noqa: E501, W505
             '           QOS_PROFILE_5QI = 6, QOS_PROFILE_PRIORITY_LEVEL = 1, QOS_PROFILE_ARP_PRIORITY_LEVEL = 1, QOS_PROFILE_ARP_PREEMPTCAP = "NOT_PREEMPT",\n'  # noqa: E501, W505
             '           QOS_PROFILE_ARP_PREEMPTVULN = "NOT_PREEMPTABLE", SESSION_AMBR_UL = "20Mbps", SESSION_AMBR_DL = "22Mbps"},\n'  # noqa: E501, W505
-            '         { NSSAI_SST = 222; NSSAI_SD = "", DNN = "default", DEFAULT_SESSION_TYPE = "IPv4", DEFAULT_SSC_MODE = 1,\n'  # noqa: E501, W505
+            '         { NSSAI_SST = 222; NSSAI_SD = "123", DNN = "default", DEFAULT_SESSION_TYPE = "IPv4", DEFAULT_SSC_MODE = 1,\n'  # noqa: E501, W505
             '           QOS_PROFILE_5QI = 7, QOS_PROFILE_PRIORITY_LEVEL = 1, QOS_PROFILE_ARP_PRIORITY_LEVEL = 1, QOS_PROFILE_ARP_PREEMPTCAP = "NOT_PREEMPT",\n'  # noqa: E501, W505
             '           QOS_PROFILE_ARP_PREEMPTVULN = "NOT_PREEMPTABLE", SESSION_AMBR_UL = "20Mbps", SESSION_AMBR_DL = "22Mbps"},\n'  # noqa: E501, W505
-            '         { NSSAI_SST = 1; NSSAI_SD = "", DNN = "oai", DEFAULT_SESSION_TYPE = "IPv4", DEFAULT_SSC_MODE = 1,\n'  # noqa: E501, W505
+            '         { NSSAI_SST = 1; NSSAI_SD = "1023", DNN = "oai", DEFAULT_SESSION_TYPE = "IPv4", DEFAULT_SSC_MODE = 1,\n'  # noqa: E501, W505
             '           QOS_PROFILE_5QI = 8, QOS_PROFILE_PRIORITY_LEVEL = 1, QOS_PROFILE_ARP_PRIORITY_LEVEL = 1, QOS_PROFILE_ARP_PREEMPTCAP = "NOT_PREEMPT",\n'  # noqa: E501, W505
             '           QOS_PROFILE_ARP_PREEMPTVULN = "NOT_PREEMPTABLE", SESSION_AMBR_UL = "20Mbps", SESSION_AMBR_DL = "22Mbps"}\n'  # noqa: E501, W505
             "        );\n"
