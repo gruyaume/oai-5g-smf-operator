@@ -32,7 +32,7 @@ class Oai5GSMFOperatorCharm(CharmBase):
     def __init__(self, *args):
         """Observes juju events."""
         super().__init__(*args)
-        self._container_name = "smf"
+        self._container_name = self._service_name = "smf"
         self._container = self.unit.get_container(self._container_name)
         self.service_patcher = KubernetesServicePatch(
             charm=self,
@@ -124,7 +124,7 @@ class Oai5GSMFOperatorCharm(CharmBase):
         """
         self._container.add_layer("smf", self._pebble_layer, combine=True)
         self._container.replan()
-        self.unit.status = ActiveStatus()
+        self._container.restart(self._service_name)
 
     @property
     def _amf_relation_created(self) -> bool:
@@ -386,7 +386,7 @@ class Oai5GSMFOperatorCharm(CharmBase):
             "summary": "smf layer",
             "description": "pebble config layer for smf",
             "services": {
-                "smf": {
+                self._service_name: {
                     "override": "replace",
                     "summary": "smf",
                     "command": f"/openair-smf/bin/oai_smf -c {BASE_CONFIG_PATH}/{CONFIG_FILE_NAME} -o",  # noqa: E501
