@@ -253,51 +253,51 @@ class Oai5GSMFOperatorCharm(CharmBase):
 
     @property
     def _config_dnn_0_ni(self) -> str:
-        return "oai.ipv4"
+        return self.model.config["dnn-0-ni"]
 
     @property
     def _config_dnn_0_pdu_session_type(self) -> str:
-        return "IPv4"
+        return self.model.config["dnn-0-pdu-session-type"]
 
     @property
     def _config_dnn_0_ipv4_range(self) -> str:
-        return "12.1.1.2 - 12.1.1.40"
+        return self.model.config["dnn-0-ipv4-range"]
 
     @property
     def _config_dnn_0_ipv6_prefix(self) -> str:
-        return "2001:1:2::/64"
+        return self.model.config["dnn-0-ipv6-prefix"]
 
     @property
     def _config_dnn_1_ni(self) -> str:
-        return "default"
+        return self.model.config["dnn-1-ni"]
 
     @property
     def _config_dnn_1_pdu_session_type(self) -> str:
-        return "IPv4"
+        return self.model.config["dnn-1-pdu-session-type"]
 
     @property
     def _config_dnn_1_ipv4_range(self) -> str:
-        return "12.1.1.41 - 12.1.1.80"
+        return self.model.config["dnn-1-ipv4-range"]
 
     @property
     def _config_dnn_1_ipv6_prefix(self) -> str:
-        return "3001:1:2::/64"
+        return self.model.config["dnn-1-ipv6-prefix"]
 
     @property
     def _config_dnn_2_ni(self) -> str:
-        return "oai"
+        return self.model.config["dnn-2-ni"]
 
     @property
     def _config_dnn_2_pdu_session_type(self) -> str:
-        return "IPv4"
+        return self.model.config["dnn-2-pdu-session-type"]
 
     @property
     def _config_dnn_2_ipv4_range(self) -> str:
-        return "12.1.1.81 - 12.1.1.120"
+        return self.model.config["dnn-2-ipv4-range"]
 
     @property
     def _config_dnn_2_ipv6_prefix(self) -> str:
-        return "4001:1:2::/64"
+        return self.model.config["dnn-2-ipv6-prefix"]
 
     @property
     def _config_dns_0_ipv4_address(self) -> str:
@@ -357,27 +357,27 @@ class Oai5GSMFOperatorCharm(CharmBase):
 
     @property
     def _config_dnn_0_nssai_sst(self) -> str:
-        return "1"
+        return self.model.config["dnn-0-nssai-sst"]
 
     @property
     def _config_dnn_0_nssai_sd(self) -> str:
-        return "1"
+        return self.model.config["dnn-0-nssai-sd"]
 
     @property
     def _config_dnn_1_nssai_sst(self) -> str:
-        return "222"
+        return self.model.config["dnn-1-nssai-sst"]
 
     @property
     def _config_dnn_1_nssai_sd(self) -> str:
-        return "123"
+        return self.model.config["dnn-1-nssai-sd"]
 
     @property
     def _config_dnn_2_nssai_sst(self) -> str:
-        return "1"
+        return self.model.config["dnn-2-nssai-sst"]
 
     @property
     def _config_dnn_2_nssai_sd(self) -> str:
-        return "1023"
+        return self.model.config["dnn-2-nssai-sd"]
 
     @property
     def _pebble_layer(self) -> dict:

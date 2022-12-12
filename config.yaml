@@ -1,0 +1,109 @@
+options:
+  dnn-0-ni:
+    type: string
+    description: |
+        The Network Instance (NI) of the DNN.
+    default: "oai.ipv4"
+    required: true
+  dnn-0-pdu-session-type:
+    type: string
+    description: |
+        The PDU Session Type of the DNN.
+    default: "IPv4"
+    required: true
+  dnn-0-ipv4-range:
+    type: string
+    description: |
+        The IPv4 range of the DNN.
+    default: "12.1.1.2 - 12.1.1.40"
+    required: true
+  dnn-0-ipv6-prefix:
+    type: string
+    description: |
+        The IPv6 prefix of the DNN.
+    default: "2001:1:2::/64"
+    required: true
+  dnn-0-nssai-sst:
+    type: string
+    description: |
+        The NSSAI SST of the DNN.
+    default: "1"
+    required: true
+  dnn-0-nssai-sd:
+    type: string
+    description: |
+        The NSSAI SD of the DNN.
+    default: "1"
+    required: true
+  dnn-1-ni:
+    type: string
+    description: |
+        The Network Instance (NI) of the DNN.
+    default: "default"
+    required: true
+  dnn-1-pdu-session-type:
+    type: string
+    description: |
+        The PDU Session Type of the DNN.
+    default: "IPv4"
+    required: true
+  dnn-1-ipv4-range:
+    type: string
+    description: |
+        The IPv4 range of the DNN.
+    default: "12.1.1.41 - 12.1.1.80"
+    required: true
+  dnn-1-ipv6-prefix:
+    type: string
+    description: |
+        The IPv6 prefix of the DNN.
+    default: "3001:1:2::/64"
+    required: true
+  dnn-1-nssai-sst:
+    type: string
+    description: |
+        The NSSAI SST of the DNN.
+    default: "222"
+    required: true
+  dnn-1-nssai-sd:
+    type: string
+    description: |
+        The NSSAI SD of the DNN.
+    default: "123"
+    required: true
+  dnn-2-ni:
+    type: string
+    description: |
+        The Network Instance (NI) of the DNN.
+    default: "oai"
+    required: true
+  dnn-2-pdu-session-type:
+    type: string
+    description: |
+        The PDU Session Type of the DNN.
+    default: "IPv4"
+    required: true
+  dnn-2-ipv4-range:
+    type: string
+    description: |
+        The IPv4 range of the DNN.
+    default: "12.1.1.81 - 12.1.1.120"
+    required: true
+  dnn-2-ipv6-prefix:
+    type: string
+    description: |
+        The IPv6 prefix of the DNN.
+    default: "4001:1:2::/64"
+    required: true
+  dnn-2-nssai-sst:
+    type: string
+    description: |
+        The NSSAI SST of the DNN.
+    default: "1"
+    required: true
+  dnn-2-nssai-sd:
+    type: string
+    description: |
+        The NSSAI SD of the DNN.
+    default: "1023"
+    required: true
